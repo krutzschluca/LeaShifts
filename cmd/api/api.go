@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/jmoiron/sqlx"
-	config "github.com/luca/webdev/cmd/api/internal"
-	"github.com/luca/webdev/internal/api"
-	"github.com/luca/webdev/internal/model"
+	config "github.com/krutzschluca/LeaShifts/cmd/api/internal"
+	"github.com/krutzschluca/LeaShifts/internal/api"
+	"github.com/krutzschluca/LeaShifts/internal/model"
 	"go.uber.org/zap"
 
 	_ "github.com/jackc/pgx/v5/stdlib"
@@ -80,5 +80,5 @@ func main() {
 		a.DeleteShiftHandler(w, r)
 	})
 
-	http.ListenAndServe("localhost"+cfg.Listen, mux) // nolint:errcheck
+	http.ListenAndServe(cfg.Listen, mux) // nolint:errcheck
 }

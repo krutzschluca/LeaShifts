@@ -1,4 +1,4 @@
-module github.com/luca/webdev
+module github.com/krutzschluca/LeaShifts
 
 go 1.22.2
 

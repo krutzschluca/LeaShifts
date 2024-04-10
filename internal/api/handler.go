@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/luca/webdev/internal/model"
+	"github.com/krutzschluca/LeaShifts/internal/model"
 )
 
 type API struct {
