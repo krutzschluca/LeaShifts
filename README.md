@@ -1,5 +1,7 @@
 # LeaShifts API
 
+
+
 ## Overview
 LeaShifts API is a modern RESTful service designed to manage store operations including employees, stores, and shifts. It is developed in Go and hosted on Render, utilizing a PostgreSQL database hosted on Neon. This setup ensures scalable and reliable access to the application, which is ready to handle real-world operational data.
 
@@ -35,6 +37,7 @@ The API documentation is included within the Postman collection, providing detai
 ## Additional Notes
 - The application does not require local execution since it is fully hosted and managed on Render, offering a scalable and maintenance-free operation.
 - For detailed insights into the API functionalities, refer to the Postman documentation included in the collection.
+- After previously having built the application using PHP, we decided to rewrite everything into GO. We were not able to connect to the database hosted on Neon using PHP and since it did work for a colleague of ours that was using Go, we decided to use Go as well.
 
 ## Contact Information
 For more information or queries regarding the API usage, feel free to contact us, Luca Krutzsch and/or Pieter Vögele.
