@@ -81,6 +81,11 @@ func main() {
 		a.DeleteShiftHandler(w, r)
 	})
 
-	handler := cors.Default().Handler(mux)
+	handler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"*"},
+		AllowCredentials: true,
+	}).Handler(mux)
 	http.ListenAndServe(cfg.Listen, handler) // nolint:errcheck
 }
