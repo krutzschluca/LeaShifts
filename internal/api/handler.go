@@ -30,6 +30,15 @@ func renderJSON(w http.ResponseWriter, v interface{}) {
 	w.Write(js)
 }
 
+// CORS middleware to add necessary headers
+func CORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, PUT")
+		next.ServeHTTP(w, r)
+	})
+}
+
 func (a *API) GetEmployeeHandler(w http.ResponseWriter, r *http.Request) {
 	idString := r.PathValue("id")
 	id, err := strconv.Atoi(idString)
@@ -222,8 +231,7 @@ func (a *API) GetShiftsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	renderJSON(w, shifts)
-}
+	re
 
 func (a *API) AddShiftHandler(w http.ResponseWriter, r *http.Request) {
 	var s model.Shift
