@@ -231,7 +231,8 @@ func (a *API) GetShiftsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	re
+	renderJSON(w, shifts)
+}
 
 func (a *API) AddShiftHandler(w http.ResponseWriter, r *http.Request) {
 	var s model.Shift
