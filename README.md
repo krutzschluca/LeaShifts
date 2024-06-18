@@ -5,6 +5,10 @@
 ## Overview
 LeaShifts API is a modern RESTful service designed to manage store operations including employees, stores, and shifts. It is developed in Go and hosted on Render, utilizing a PostgreSQL database hosted on Neon. This setup ensures scalable and reliable access to the application, which is ready to handle real-world operational data.
 
+## Running Frontend
+1. **Install a local Server of your choice** Start your local server from the root directory of our Project
+3. **Open Website in your Borwser** Goto localhost:xxxx/frontend/ in your Browser of Choice
+
 ## Accessing the APIs
 The APIs are accessible online without the need for local setup or installation. For interacting with the APIs, use the provided Postman collection which includes comprehensive documentation for each endpoint.
 

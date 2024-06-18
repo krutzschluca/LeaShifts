@@ -100,3 +100,6 @@ $RECYCLE.BIN/
 testimage.jpg
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,go,visualstudiocode,windows 
+
+#Node Modules
+/node_modules/

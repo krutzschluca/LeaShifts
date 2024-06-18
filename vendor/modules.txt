@@ -33,6 +33,10 @@ github.com/jackc/puddle/v2/internal/genstack
 ## explicit; go 1.10
 github.com/jmoiron/sqlx
 github.com/jmoiron/sqlx/reflectx
+# github.com/rs/cors v1.11.0
+## explicit; go 1.13
+github.com/rs/cors
+github.com/rs/cors/internal
 # go.uber.org/multierr v1.10.0
 ## explicit; go 1.19
 go.uber.org/multierr

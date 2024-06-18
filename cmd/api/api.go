@@ -7,6 +7,7 @@ import (
 	config "github.com/krutzschluca/LeaShifts/cmd/api/internal"
 	"github.com/krutzschluca/LeaShifts/internal/api"
 	"github.com/krutzschluca/LeaShifts/internal/model"
+	"github.com/rs/cors"
 	"go.uber.org/zap"
 
 	_ "github.com/jackc/pgx/v5/stdlib"
@@ -80,5 +81,11 @@ func main() {
 		a.DeleteShiftHandler(w, r)
 	})
 
-	http.ListenAndServe(cfg.Listen, mux) // nolint:errcheck
+	handler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"*"},
+		AllowCredentials: true,
+	}).Handler(mux)
+	http.ListenAndServe(cfg.Listen, handler) // nolint:errcheck
 }
