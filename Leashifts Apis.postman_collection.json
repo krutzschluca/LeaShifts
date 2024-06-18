@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "37a157b3-f5b6-496e-a8bd-ae2b52605689",
+		"name": "Leashifts Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21239607"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "List All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/employees",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"employees"
+							]
+						},
+						"description": "GET /employees\n\nRetrieves a list of all employees in the system. This endpoint returns an array of employee objects, each containing all details associated with an employee."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Employee by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/employees/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"employees",
+								"{id}"
+							]
+						},
+						"description": "GET /employees/{id}\n\nFetches details of a specific employee by their unique identifier. Replace `{id}` in the URL with the employee ID to retrieve their details."
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/stores",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"stores"
+							]
+						},
+						"description": "GET /stores  \nReturns a list of all stores, including details such as store ID, address, and operating hours."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Store by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/stores/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"stores",
+								"{id}"
+							]
+						},
+						"description": "GET /stores/{id}\n\nProvides details of a specific store by ID. Useful for retrieving specific store information including address and operating hours."
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Shifts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/shifts",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"shifts"
+							]
+						},
+						"description": "GET /shifts  \nRetrieves a list of all shifts including associated store and employee IDs, along with the scheduled dates and times."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Shifts by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/shifts/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"shifts",
+								"{id}"
+							]
+						},
+						"description": "GET /shifts/{id}  \nStartFragmentReturns details of a specific shift by its ID, showing linked employee and store, as well as the timing of the shift.EndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pete Brady\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/employees",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"employees"
+							]
+						},
+						"description": "POST /employees\n\nAdds a new employee to the system. Requires a JSON body with employee details such as name.\n\nExample Request Body:"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"1234 Mn S\",\r\n  \"opening_time\": \"08:00\",\r\n  \"closing_time\": \"20:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/stores",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"stores"
+							]
+						},
+						"description": "POST /stores  \nCreates a new store with details such as address, opening time, and closing time.\n\nExample Request Body:"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Shift",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"store_id\": 1,\r\n  \"employee_id\": 2,\r\n  \"date\": \"2024-04-15T15:04:05Z\",\r\n  \"starting_time\": \"09:00\",\r\n  \"ending_time\": \"17:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/shifts",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"shifts"
+							]
+						},
+						"description": "POST /shifts  \nSchedules a new shift by linking a store and an employee, along with specifying the date and shift timings.\n\nExample Request Body:"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Luca Krutsdfsgswgszsch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/employees/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"employees",
+								"{id}"
+							]
+						},
+						"description": "PUT /employees/{id}  \nUpdates information for an existing employee. The request body should contain all the fields that require updating.\n\nExample Request Body:"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Store",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\" : \"Sesame Street\",\r\n    \"opening_time\": \"08:00\",\r\n    \"closing_time\": \"20:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/stores/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"stores",
+								"{id}"
+							]
+						},
+						"description": "StartFragmentPUT /stores/{id}EndFragment  \nModifies details of an existing store such as its address and operating hours.\n\nExample Request Body:"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shift",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"store_id\": 1,\r\n  \"employee_id\": 3,\r\n  \"date\": \"2024-04-16T15:04:05Z\",\r\n  \"starting_time\": \"10:00\",\r\n  \"ending_time\": \"18:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://leashifts.onrender.com/shifts/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"shifts",
+								"{id}"
+							]
+						},
+						"description": "PUT /shifts/{id}  \nUpdates the details of a scheduled shift. This can include changing the linked employee, store, or the timings of the shift.\n\nExample Request Body:"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/employees/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"employees",
+								"{id}"
+							]
+						},
+						"description": "DELETE /employees/{id}  \nRemoves an employee from the system by their ID. Useful for cleaning up records that are no longer needed. Only possible if there is no shift scheduled with this employee."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Store",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/stores/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"stores",
+								"{id}"
+							]
+						},
+						"description": "DELETE /stores/{id}  \nDeletes a store from the database. Essential for managing store closures or incorrect entries. Only possible if there is no shift scheduled in this Store."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Shift",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://leashifts.onrender.com/shifts/{id}",
+							"protocol": "https",
+							"host": [
+								"leashifts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"shifts",
+								"{id}"
+							]
+						},
+						"description": "DELETE /shifts/{id}  \nCancels a scheduled shift by its ID. This endpoint is used when shifts are no longer required or need to be rescheduled."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
